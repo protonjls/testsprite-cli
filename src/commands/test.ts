@@ -15065,9 +15065,9 @@ export function createTestCommand(deps: TestDeps = {}): Command {
         '\nExit codes:\n' +
         '  0  all targeted tests deleted (or --dry-run)\n' +
         '  1  one or more deletions failed\n' +
-        '  3  auth error (the key was rejected — every deletion fails the same way)\n' +
+        '  3  auth error (a rejected key on any id — outranks 1 and 14)\n' +
         '  5  validation error (e.g. missing --confirm, or --all without --project)\n' +
-        '  14 client too old (every deletion fails the same way)',
+        '  14 client too old (on any id — outranks 1)',
     )
     .option('--confirm', 'required: confirm the destructive operation', false)
     .option('--all', 'delete all tests in the resolved project (requires --project)', false)
